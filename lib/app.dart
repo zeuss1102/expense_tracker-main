@@ -8,7 +8,6 @@ import 'package:expenses_tracker/screens/home/blocs/get_expenses_bloc/get_expens
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -23,7 +22,8 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => GetExpensesBloc(FirebaseExpenseRepo())..add(GetExpenses()),
+          create: (context) =>
+              GetExpensesBloc(FirebaseExpenseRepo())..add(GetExpenses()),
         ),
       ],
       child: MaterialApp(
@@ -39,5 +39,8 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+
 
 
