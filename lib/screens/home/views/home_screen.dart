@@ -22,7 +22,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int index = 0;
-  late Color selectedItem = Colors.blue;
+  late Color selectedItem = Colors.red;
   Color unselectedItem = Colors.grey;
 
   @override

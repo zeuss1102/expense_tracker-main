@@ -214,13 +214,11 @@ Future getCategoryCreation(BuildContext context){
                                                                     .infinity,
                                                                 height: 50,
                                                                 child: TextButton(
-                                                                    onPressed:
-                                                                        () {
-                                                                      print(
-                                                                          categoryColor);
-                                                                      Navigator.pop(
-                                                                          ctx2);
-                                                                    },
+                                                                onPressed: () {
+  debugPrint(categoryColor.toString());
+  Navigator.pop(ctx2);
+},
+
                                                                     style: TextButton.styleFrom(
                                                                         backgroundColor:
                                                                             Colors
@@ -267,28 +265,34 @@ Future getCategoryCreation(BuildContext context){
                                                 child: isLoading == true
                                                 ? const Center(
                                                 child : CircularProgressIndicator(),
-                                                )
-                                                : TextButton(
-                                                    onPressed: () {
-                                                      //create category object add pop
-                                                      setState (() {
+                                                ):
+                                                   TextButton(
+  onPressed: () {
+    // Crear el objeto categoría y agregarlo al Bloc
+    setState(() {
+      category.categoryId = const Uuid().v1();
+      category.name = categoryNameController.text;
+      category.icon = iconSelected;
+      category.color = categoryColor!.value;
+    });
+    context.read<CreateCategoryBloc>().add(CreateCategory(category));
+    // Navigator.pop(context); // Si deseas cerrar el diálogo después de guardar
+  },
+  style: TextButton.styleFrom(
+    backgroundColor: Colors.black,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(12),
+    ),
+  ),
+  child: const Text(
+    'Save',
+    style: TextStyle(
+      fontSize: 22,
+      color: Colors.white,
+    ),
+  ),
+)
 
-                                                      category.categoryId = Uuid().v1();
-                                                      category.name =categoryNameController.text;
-                                                      category.icon =iconSelected;
-                                                      category.color =categoryColor!.value;
-                                                      });
-                                                      context.read<CreateCategoryBloc>().add(CreateCategory( category));
-                                                      //Navigator.pop(context);
-                                                    },
-                                                    style: TextButton.styleFrom( backgroundColor:Colors.black,shape:RoundedRectangleBorder( borderRadius: BorderRadius.circular(12))),
-                                                    child: const Text(
-                                                      'Save',
-                                                      style: TextStyle(
-                                                          fontSize: 22,
-                                                          color: Colors.white),
-                              )
-                            ),
                           )
                         ],
                       ),

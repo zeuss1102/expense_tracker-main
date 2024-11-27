@@ -13,7 +13,7 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 25.0,vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 50.0,vertical: 10),
         child: Column(
           children: [
             Row(
@@ -27,9 +27,9 @@ class MainScreen extends StatelessWidget {
                         Container(
                           width: 50,
                           height: 50,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             shape: BoxShape.circle,
-                            color: Colors.yellow[700]
+                            color: Color.fromARGB(255, 172, 45, 251)
                           )
                         ),
                         Icon(
@@ -53,7 +53,7 @@ class MainScreen extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Theme.of(context).colorScheme.onBackground
+                          color: Theme.of(context).colorScheme.onSurface,
                           ),
                         )
                       ],
@@ -206,7 +206,7 @@ class MainScreen extends StatelessWidget {
                   'Transactions',
                     style: TextStyle(
                     fontSize: 16,
-                    color: Theme.of(context).colorScheme.onBackground,
+                    color: Theme.of(context).colorScheme.onSurface,
                     fontWeight: FontWeight.bold
                   ),
                 ),
@@ -268,7 +268,7 @@ class MainScreen extends StatelessWidget {
                                     extepense[i].category.name,
                                     style: TextStyle(
                                     fontSize: 14,
-                                    color: Theme.of(context).colorScheme.onBackground,
+                                    color: Theme.of(context).colorScheme.onSurface,
                                     fontWeight: FontWeight.w500
                                   ),
                                 ),
@@ -281,7 +281,7 @@ class MainScreen extends StatelessWidget {
                                     "\$${extepense[i].amount}.00",
                                     style: TextStyle(
                                     fontSize: 14,
-                                    color: Theme.of(context).colorScheme.onBackground,
+                                    color: Theme.of(context).colorScheme.onSurface,
                                     fontWeight: FontWeight.w400
                                   ),
                                 ),
