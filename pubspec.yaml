@@ -37,4 +37,6 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/
+    - lib/assets/onboarding1.png
+    - lib/assets/onboarding2.png
+    - lib/assets/onboarding3.png

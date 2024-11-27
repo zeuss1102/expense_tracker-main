@@ -22,6 +22,7 @@ class _LoginPageState extends State<LoginPage> {
       );
       if (!mounted) return;
       debugPrint('Login successful: ${userCredential.user?.email}');
+      // Redirigir a HomeScreen
       Navigator.pushReplacementNamed(context, '/home');
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
